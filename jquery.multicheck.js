@@ -21,11 +21,7 @@
             base.children.live('change', base.childOnCheckUncheck);
         };
         
-        // Sample Function, Uncomment to use
-        // base.functionName = function(paramaters){
-        // 
-        // };
-        
+      
         base.childOnCheckUncheck = function(event) {
         	var all = true
         	,	atleast1 = false;
@@ -42,10 +38,10 @@
         	})
         	
         	if(!all && atleast1) {
-        		base.$el.prop({"checked" : true}).css({"opacity" : 0.5})
+        		base.$el.attr({"checked" : true}).css({"opacity" : 0.5})
         	}
         	else if(all) {
-        		base.$el.prop({"checked" : true}).css({"opacity" : 1})
+        		base.$el.attr({"checked" : true}).css({"opacity" : 1})
         	}
         	else {
         		base.$el.removeAttr("checked").css({"opacity" : 1})
@@ -56,9 +52,9 @@
 			var el = event.target;
 			
 			if(el.checked)
-				base.children.prop({"checked": true});
+				base.children.attr({"checked": true});
 			else
-				base.children.removeProp("checked");
+				base.children.removeAttr("checked");
         }
         
         // Run initializer
