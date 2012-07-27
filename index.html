@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+	
+	<script type="text/javascript">
+		function getDocHeight() {
+			var D = document;
+			return Math.max(
+				Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+				Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+				Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+			);
+		}
+		
+		window.onload = function(){
+			document.getElementById('loading').style.display = "none";
+			document.getElementById('main').style.display = "block";
+			$('body').scrollspy($('body').data());
+		};
+		
+	</script>
+	
+	<link rel="stylesheet"
+			href="//fonts.googleapis.com/css?family=Roboto:regular,medium,thin,italic,mediumitalic,bold" title="roboto">
+
+	<link rel="stylesheet" href="stylesheets/bootstrap.css">
+	<link rel="stylesheet" href="stylesheets/bootstrap-responsive.css">
+	<link rel="stylesheet" href="stylesheets/stylesheet.css">
+	<link rel="stylesheet" href="stylesheets/font-awesome.css">
+	<!--[if IE 7]>
+		<link rel="stylesheet" href="stylesheets/font-awesome-ie7.css">
+	<![endif]-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/jquery.folderGrid.css"/>
+	<script src="javascripts/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+    <title>multicheck by bittu</title>
+  </head>
+
+  <body data-target=".subnav" data-offset="100">
+
+	<div id="loading">
+		<img src="images/octocat-spinner-64.gif" alt="octocat-spinner">
+	</div>
+	<script type="text/javascript">
+		document.getElementById('loading').style.height = (getDocHeight()-100)+"px";
+	</script>
+	<div id="main">
+    <header>
+		<div class="well ics-border-bottom">
+			<h1><a href="/">bittu.github.com </a><span style="font-size: 24px;">/</span> multicheck</h1>
+			<div class="pull-right">
+				<div class="btn-group">
+					<a href="https://github.com/bittu/multicheck/zipball/master" class="btn">
+						<small>Download</small>
+						<h5>.ZIP</h5>
+					</a>
+					<a href="https://github.com/bittu/multicheck/tarball/master" class="btn">
+						<small>Download</small>
+						<h5>.TAR</h5>
+					</a>
+					<a href="https://github.com/bittu/multicheck" class="btn">
+						<small>Fork</small>
+						<h5>GITHUB</h5>
+					</a>
+				</div>
+			</div>
+		</div>
+    </header>
+
+    <div class="container">
+		
+		<div class="row">
+			<div class="span12">
+				<h2 class="pull-right"> - a jQuery plugin for grouping checkboxes with a parent checkbox of similar type.</h2>
+				<div class="clearfix"></div>
+				<div class="subnav">
+					<ul class="nav nav-pills">
+						<li><a href="#contents">Contents</a></li>
+						<li><a href="#config">Config Options</a></li>
+						<li><a href="#usage">Usage</a></li>
+						<li><a href="#examples">Examples</a></li>
+					</ul>
+				</div>
+
+			</div>	
+		</div>		
+		
+		<div class="row">
+			<div class="span12">
+				<section id="contents">
+					<h3>Contents :</h3>
+					<br />
+					<div class="row">
+						<div class="span6">
+							<h4>JS <small> jquery.multicheck.js</small></h4>
+							<hr />
+							<blockquote>
+								<p class="ics-font-grey">For, you guessed it, the plugin file.</p>
+								<small>
+									<span class="label label-info">edit as u like...</span> 
+									<span class="label label-warning">jus be careful while editing...</span>
+								</small>
+							</blockquote>
+							<br />
+						</div>
+					</div>
+				</section>
+	
+				<section id="config">
+					<h3>Config Options :</h3>
+					<br />
+					<div class="row">
+						<div class="span12">
+							<h4>No Config <small>nothing, as such</small></h4>
+							<hr />
+							
+						</div>
+					</div>
+				</section>
+
+				<section id="usage">
+					<h3>Usage :</h3>
+					<br />
+					<div class="row">
+						<div class="span6">
+							<h4>HTML <small>simple input tags, with <code>data-check="parent"</code> attr for parent, <code>data-check="child"</code> attr for children, and <code>data-name="name"</code> attr for grouped checkboxes.</small></h4>
+							<hr />
+							<blockquote>
+<pre class="prettyprint">
+&lt;div class=&quot;group&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; data-check=&quot;parent&quot; data-name=&quot;name&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name&quot;&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+							</blockquote>
+						</div>
+						<div class="span6">
+							<h4>JS <small>simple plugin call, no options needed<br /><br /></small></h4>
+							<hr />
+							<blockquote>
+<pre class="prettyprint">
+$('input[data-check="parent"]').multicheck();
+</pre>
+
+							</blockquote>
+						</div>
+					</div>
+				</section>
+
+				<section id="examples">
+					<h3>Examples :</h3>
+					<br />
+					<div class="row">
+						<h4>1. <small>simple, as always</small></h4>
+						<hr />
+						<div class="span6">
+							<h5>Code</h5>
+							<hr />
+							<blockquote>
+<pre class="prettyprint">
+&lt;div class=&quot;clearfix&quot;&gt;
+  &lt;div class=&quot;group&quot;&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;parent&quot; data-name=&quot;name1&quot;&gt; Nums&lt;/label&gt;
+    &lt;div class=&quot;children&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name1&quot;&gt; One&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name1&quot;&gt; Two&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name1&quot;&gt; Three&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name1&quot;&gt; Four&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;group&quot;&gt;
+    &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;parent&quot; data-name=&quot;name2&quot;&gt; Alphas&lt;/label&gt;
+    &lt;div class=&quot;children&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name2&quot;&gt; A&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name2&quot;&gt; B&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name2&quot;&gt; C&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;checkbox&quot; data-check=&quot;child&quot; data-name=&quot;name2&quot;&gt; D&lt;/label&gt;
+		&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+$('input[data-check=parent]').multicheck();
+</pre>
+							</blockquote>
+						</div>
+						<div class="span6">
+							<h5>Live</h5>
+							<hr />
+							<blockquote>
+								<div class="clearfix">
+									<div class="group">
+										<label><input type="checkbox" data-check="parent" data-name="name1"> <strong>Nums</strong></label>
+										<hr />
+										<div class="children">
+											<label><input type="checkbox" data-check="child" data-name="name1"> One</label>
+											<label><input type="checkbox" data-check="child" data-name="name1"> Two</label>
+											<label><input type="checkbox" data-check="child" data-name="name1"> Three</label>
+											<label><input type="checkbox" data-check="child" data-name="name1"> Four</label>
+										</div>
+									</div>
+
+									<div class="group">
+										<label><input type="checkbox" data-check="parent" data-name="name2"> <strong>Alphas</strong></label>
+										<hr />
+										<div class="children">
+											<label><input type="checkbox" data-check="child" data-name="name2"> A</label>
+											<label><input type="checkbox" data-check="child" data-name="name2"> B</label>
+											<label><input type="checkbox" data-check="child" data-name="name2"> C</label>
+											<label><input type="checkbox" data-check="child" data-name="name2"> D</label>
+										</div>
+									</div>
+								</div>
+								<small><span class="label label-info">default, and thats it</span></small>
+							</blockquote>
+						</div>
+					</div>
+					<br />
+				</section>
+			</div>
+		</div>
+	</div>		
+    
+	
+	<footer>
+		<div class="footer ics-border-top">
+
+			<p class="pull-left">&copy; Sandeep Vemula <i>aka</i> bittu 2012. </p>
+			<p>&nbsp;&nbsp;Powered By 
+				<a href="https://www.github.com"><i class="icon-github"> </i> Github</a>
+			</p>
+			</div>
+	</footer>
+
+	</div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="javascripts/jquery-1.7.2.min.js"><\/script>')</script>
+
+	<script src="javascripts/bootstrap.min.js"></script>
+	<script src="javascripts/jquery.multicheck.js"></script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+							
+		   // fix sub nav on scroll
+			var $win = $(window)
+			  , $nav = $('.subnav, .top')
+			  , navTop = $('.subnav').length && $('.subnav').offset().top
+			  , isFixed = 0
+
+			processScroll()
+
+			// hack sad times - holdover until rewrite for 2.1
+			$nav.on('click', function () {
+			  if (!isFixed) setTimeout(function () {  $win.scrollTop($win.scrollTop() - 7) }, 10)
+			})
+
+			$win.on('scroll', processScroll)
+
+			function processScroll() {
+			  var i, scrollTop = $win.scrollTop()
+			  if (scrollTop > navTop && !isFixed) {
+				isFixed = 1
+				$nav.addClass('subnav-fixed')
+			  } else if (scrollTop <= navTop && isFixed) {
+				isFixed = 0
+				$nav.removeClass('subnav-fixed')
+			  }
+			}
+			
+			$('input[data-check=parent]').multicheck();
+		});
+		
+	</script>
+  </body>
+</html>
