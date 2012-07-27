@@ -1,6 +1,6 @@
 (function($){
     $.multicheck = function(el, options){
-        // To avoid scope issues, use 'base' instead of 'this'
+        // using 'base' instead of 'this', to avoid scope issues, 
         // to reference this class from internal events and functions.
         var base = this;
         
@@ -8,13 +8,13 @@
         base.$el = $(el);
         base.el = el;
         
-        // Add a reverse reference to the DOM object
+        // a reverse reference to the DOM object
         base.$el.data("multicheck", base);
         
         base.init = function(){
             base.options = $.extend({},$.multicheck.defaultOptions, options);
             
-            // Put your initialization code here
+            // initialization code
             base.children = $('input[data-name='+base.$el.data('name')+'][data-check=child]');
             
             base.$el.live('change', base.parentOnCheckUncheck);
