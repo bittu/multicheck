@@ -72,6 +72,8 @@
 				base.children.attr({"checked": true});
 			else
 				base.children.removeAttr("checked");
+			
+			base.$el.css({"opacity" : 1});
         }
         
         // Run initializer
