@@ -1,0 +1,34 @@
+{
+    "name": "multicheck",
+    "title": "jQuery multicheck",
+    "description": "a jQuery plugin for grouping checkboxes with a parent checkbox of similar type.",
+    "keywords": [
+        "checkbox",
+        "multicheckbox"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Sandeep Vemula",
+        "url": "http://bittu.github.com"
+    },
+    "maintainers": [
+        {
+            "name": "Sandeep Vemula",
+            "email": "bittu4u.4ever@gmail.com",
+            "url": "http://bittu.github.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "Apache",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    ],
+    "bugs": "https://github.com/bittu/multicheck/issues",
+    "homepage": "http://bittu.github.com/multicheck/",
+    "docs": "http://bittu.github.com/multicheck/",
+    "download": "https://github.com/bittu/multicheck/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
